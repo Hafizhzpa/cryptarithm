@@ -1,5 +1,4 @@
 from itertools import permutations
-from tqdm import tqdm
 import streamlit as st
 
 def solve_cryptarithm(list_sum,result):
@@ -8,7 +7,7 @@ def solve_cryptarithm(list_sum,result):
     list_word.extend([*result])
     list_word=list(set(list_word))
     list_word.sort()
-    for perm in tqdm(permutations(digits, len(list_word))):
+    for perm in permutations(digits, len(list_word)):
         pair_word={k:v for k,v in zip(list_word,perm)}
         digit_sum=[]
         skip=False
